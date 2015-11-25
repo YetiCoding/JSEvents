@@ -6,8 +6,11 @@
 
 事件由子节点向父节点逐层传递
 
-Document--->html---->body---->div
+```flow
 
+div--->body---->html---->Document
+
+```
 ## 事件处理程序
 
 ## 事件对象
