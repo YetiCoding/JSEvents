@@ -6,11 +6,24 @@
 
 事件由子节点向父节点逐层传递
 
+div触发click事件传递过程:
 ```flow
 
 div--->body---->html---->Document
 
 ```
+
+### 事件捕获
+
+与事件冒泡正相反 由父节点向子节点传递
+
+div触发click事件传递过程:
+```flow
+
+Document--->html---->body---->div
+
+```
+
 ## 事件处理程序
 
 ## 事件对象
