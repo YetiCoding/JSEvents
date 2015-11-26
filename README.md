@@ -140,6 +140,25 @@ _DOM2_
 
 ```
 
+**IE**
+
+``` javascript
+
+    attachEvent();
+
+    detachEvent();
+
+```
+***事件处理程序会在全局作用域中运行***
+
+``` javascript
+
+    var btn = document.getElementById("btn");
+    btn.attachEvent("onclick",function(){  //区别 onclick
+        alert(this === window);   //true
+    },false)
+
+```
 
 ## 事件对象
 
