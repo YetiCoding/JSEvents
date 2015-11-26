@@ -70,6 +70,7 @@ this等于事件的目标元素
 
 ```
 
+案例:
 ``` html
 <form method="get">
     <input type="text" name="username" value="">
