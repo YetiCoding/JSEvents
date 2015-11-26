@@ -33,6 +33,8 @@ Document--->html---->body---->div
 
 **方式一:**
 
+_HTML绑定事件处理_
+
  ``` html
 
     <input type = "button" value = "click" onclick="alert('clicked')" />
@@ -77,6 +79,67 @@ this等于事件的目标元素
     <input type="button" value="Click" onclick="alert(username.value)">
 </form>
 ```
+
+缺点:
+  ***时差问题，各浏览器处理事件上存在差异***
+
+**方式二:**
+
+_DOM0_
+
+```javascript
+    //添加
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+        alert(this.id); //btn
+    }
+    //删除
+    btn.onclick = null;
+
+```
+
+**方式三**
+
+_DOM2_
+
+```javascript
+
+    var btn = getElementById("btn");
+
+    //添加 参数1:事件 参数2 回调函数  参数3 boolean true:事件捕获时触发  false:事件冒泡时触发
+    btn.addEventListener("click",function(){
+        //do something
+    },false);
+
+
+    //删除
+    btn.removeEventListener("click",function(){},false);
+
+```
+
+**删除监听器时需要删除和添加时相同的回调函数才有效**
+
+``` javascript
+
+    //无效的删除
+    btn.addEventListener("click",function(){
+        alert(1);
+    },false);
+
+    btn.removeEventListener("click",function(){
+        alert(1);
+    },false);
+
+    //有效的删除
+    var handler = function(){
+        //do something
+    }
+
+    btn.addEventListener("click",handler,false);
+    btn.removeEventListener("click",handler,false);
+
+```
+
 
 ## 事件对象
 
