@@ -45,6 +45,7 @@ Document--->html---->body---->div
     <input type = "button" value = "click" onclick="alert(event.type)" />
 
 ```
+
 this等于事件的目标元素
 
 ``` html
@@ -52,6 +53,28 @@ this等于事件的目标元素
     <input type = "button" value = "click" onclick="alert(this.value)" />
 
     <!-- value ==> click -->
+```
+
+作用域扩展，可访问document及该元素本身
+
+函数内部实现方式:
+``` javascript
+
+    function(){
+        with(document){
+            with(this){
+                //元素属性
+            }
+        }
+    }
+
+```
+
+``` html
+<form method="get">
+    <input type="text" name="username" value="">
+    <input type="button" value="Click" onclick="alert(username.value)">
+</form>
 ```
 
 ## 事件对象
