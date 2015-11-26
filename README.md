@@ -161,8 +161,49 @@ _DOM2_
 ```
 
 ## 事件对象
+------------
+###DOM Event
+
+**每次触发都会向回调函数传人event对象**
+``` javascript
+
+    btn.addEventListener("click",function(event){
+
+        alert(event.type);
+
+    },false)
+
+```
+***currentTarget***
+当前对象
+
+***target***
+源对象
+
+阻止默认特定事件默认行为: *event.preventDefault()*  **(只有cancelable为true时)**
 
 ## 事件类型
+
+###UI事件
+
+    **load事件**
+
+    触发条件：
+        当页面完全加载完成后(所有图片\Javascript文件\CSS文件等外部资源)
+
+###焦点事件
+
+###鼠标事件
+
+###滚轮事件
+
+###文本事件
+
+###键盘事件
+
+###合成事件
+
+###变动事件
 
 ## 内存和性能
 
